@@ -29,3 +29,10 @@ DiscussWeb.PageHTML.home(%{})
 mix ecto.gen.migration add_topics
 mix ecto.migrate
 ```
+
+* To test creating a record:
+```
+struct = %Discuss.Topics.Topic{}
+params = %{title: "Title A"}
+Discuss.Topics.Topic.changeset(struct, params)
+```
