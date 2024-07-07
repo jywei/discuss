@@ -23,3 +23,9 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 ```
 DiscussWeb.PageHTML.home(%{})
 ```
+
+* To create a migration:
+```
+mix ecto.gen.migration add_topics
+mix ecto.migrate
+```
