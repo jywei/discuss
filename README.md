@@ -22,6 +22,8 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 * To render HTML:
 ```
 DiscussWeb.PageHTML.home(%{})
+Phoenix.Template.render(DiscussWeb.PageHTML, "test", "html", message: "Hello from IEx!")
+Phoenix.Template.render_to_string(DiscussWeb.PageHTML, "test", "html", message: "Hello from IEx!")
 ```
 
 * To create a migration:
