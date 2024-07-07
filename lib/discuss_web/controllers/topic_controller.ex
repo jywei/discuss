@@ -1,21 +1,9 @@
 defmodule DiscussWeb.TopicController do
   use DiscussWeb, :controller
-  # lib/discuss_web.ex
-  # def controller do
-  #   quote do
-  #     use Phoenix.Controller,
-  #       formats: [:html, :json],
-  #       layouts: [html: DiscussWeb.Layouts]
+  alias Discuss.Topics.Topic
 
-  #     import Plug.Conn
-  #     import DiscussWeb.Gettext
-
-  #     unquote(verified_routes())
-  #   end
-  # end
-
-  def new(conn, params) do
-    # changeset = Topic.changeset(%Topic{})
-    # render(conn, "new.html", changeset: changeset)
+  def new(conn, _params) do
+    changeset = Topic.changeset(%Topic{}, %{})
+    render(conn, :new, changeset: changeset)
   end
 end
