@@ -38,3 +38,8 @@ struct = %Discuss.Topics.Topic{}
 params = %{title: "Title A"}
 Discuss.Topics.Topic.changeset(struct, params)
 ```
+
+```
+mix phx.gen.html Topics Topic topics title:string
+mix ecto.reset
+```
