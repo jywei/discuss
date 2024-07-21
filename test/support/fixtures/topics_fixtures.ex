@@ -1,7 +1,7 @@
 defmodule Discuss.TopicsFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `Discuss.Topics` context.
+  entities via the `Discuss.Topics.Service` context.
   """
 
   @doc """
@@ -13,7 +13,7 @@ defmodule Discuss.TopicsFixtures do
       |> Enum.into(%{
         title: "some title"
       })
-      |> Discuss.Topics.create_topic()
+      |> Discuss.Topics.Service.create_topic()
 
     topic
   end
