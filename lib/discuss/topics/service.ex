@@ -1,4 +1,4 @@
-defmodule Discuss.Topics do
+defmodule Discuss.Topics.Service do
   @moduledoc """
   The Topics context.
   """

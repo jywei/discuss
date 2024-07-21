@@ -1,4 +1,4 @@
-defmodule Discuss.TopicsTest do
+defmodule Discuss.Topics.ServiceTest do
   use Discuss.DataCase
 
   alias Discuss.Topics
