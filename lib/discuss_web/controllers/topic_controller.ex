@@ -26,19 +26,19 @@ defmodule DiscussWeb.TopicController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    topic = Service.get_topic!(id)
+  def show(conn, %{"id" => topic_id}) do
+    topic = Service.get_topic!(topic_id)
     render(conn, :show, topic: topic)
   end
 
-  def edit(conn, %{"id" => id}) do
-    topic = Service.get_topic!(id)
+  def edit(conn, %{"id" => topic_id}) do
+    topic = Service.get_topic!(topic_id)
     changeset = Service.change_topic(topic)
     render(conn, :edit, topic: topic, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "topic" => topic_params}) do
-    topic = Service.get_topic!(id)
+  def update(conn, %{"id" => topic_id, "topic" => topic_params}) do
+    topic = Service.get_topic!(topic_id)
 
     case Service.update_topic(topic, topic_params) do
       {:ok, topic} ->
@@ -51,8 +51,8 @@ defmodule DiscussWeb.TopicController do
     end
   end
 
-  def delete(conn, %{"id" => id}) do
-    topic = Service.get_topic!(id)
+  def delete(conn, %{"id" => topic_id}) do
+    topic = Service.get_topic!(topic_id)
     {:ok, _topic} = Service.delete_topic(topic)
 
     conn
